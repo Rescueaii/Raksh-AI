@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RakshAI Design System - Emergency Response Theme */
+
+@layer base {
+  :root {
+    /* Core colors - Premium Command Center Dark Mode */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    /* Card surfaces */
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Vibrant blue for visibility */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* Secondary */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Priority Colors - Brighter for dark background */
+    --priority-p1: 0 84% 60%;
+    --priority-p1-foreground: 0 0% 100%;
+    --priority-p2: 25 95% 53%;
+    --priority-p2-foreground: 0 0% 100%;
+    --priority-p3: 47 95% 60%;
+    --priority-p3-foreground: 222 47% 11%;
+    --priority-p4: 142 71% 45%;
+    --priority-p4-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --status-active: 217.2 91.2% 59.8%;
+    --status-assigned: 25 95% 53%;
+    --status-resolved: 142 71% 45%;
+
+    /* Emergency Categories */
+    --emergency-medical: 0 84% 60%;
+    --emergency-fire: 25 95% 53%;
+    --emergency-trapped: 280 84% 60%;
+    --emergency-shelter: 199 89% 48%;
+    --emergency-food: 142 71% 45%;
+    --emergency-water: 199 89% 48%;
+    --emergency-mental: 262 83% 58%;
+
+    /* Destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --radius: 0.75rem;
+
+    /* Chat bubble colors */
+    --chat-user: 217.2 91.2% 59.8%;
+    --chat-user-foreground: 222.2 47.4% 11.2%;
+    --chat-assistant: 217.2 32.6% 17.5%;
+    --chat-assistant-foreground: 210 40% 98%;
+
+    /* Sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --chat-user: 221 83% 53%;
+    --chat-user-foreground: 0 0% 100%;
+    --chat-assistant: 210 40% 96%;
+    --chat-assistant-foreground: 222 47% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: radial-gradient(at 0% 0%, hsla(217, 91%, 60%, 0.05) 0, transparent 50%),
+                      radial-gradient(at 100% 0%, hsla(0, 84%, 60%, 0.05) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Priority badge variants */
+  .priority-p1 {
+    @apply bg-[hsl(var(--priority-p1))] text-[hsl(var(--priority-p1-foreground))];
+  }
+  
+  .priority-p2 {
+    @apply bg-[hsl(var(--priority-p2))] text-[hsl(var(--priority-p2-foreground))];
+  }
+  
+  .priority-p3 {
+    @apply bg-[hsl(var(--priority-p3))] text-[hsl(var(--priority-p3-foreground))];
+  }
+  
+  .priority-p4 {
+    @apply bg-[hsl(var(--priority-p4))] text-[hsl(var(--priority-p4-foreground))];
+  }
+
+  /* Chat bubbles */
+  .chat-bubble-user {
+    @apply bg-[hsl(var(--chat-user))] text-[hsl(var(--chat-user-foreground))] rounded-2xl rounded-br-md px-4 py-3;
+  }
+
+  .chat-bubble-assistant {
+    @apply bg-[hsl(var(--chat-assistant))] text-[hsl(var(--chat-assistant-foreground))] rounded-2xl rounded-bl-md px-4 py-3;
+  }
+
+  /* Emergency button */
+  .emergency-btn {
+    @apply flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-border 
+           hover:border-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer
+           active:scale-95;
+  }
+
+  /* Pulse animation for critical alerts */
+  .pulse-critical {
+    animation: pulse-critical 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-critical {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--priority-p1) / 0.6);
+      border-color: hsl(var(--priority-p1) / 1);
+    }
+    50% {
+      box-shadow: 0 0 0 12px hsl(var(--priority-p1) / 0);
+      border-color: hsl(var(--priority-p1) / 0.3);
+    }
+  }
+
+  /* Recording animation */
+  .recording-pulse {
+    animation: recording-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes recording-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Smooth scroll area */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Case card hover effect */
+  .case-card {
+    @apply transition-all duration-200 hover:shadow-lg hover:border-primary/30;
+  }
+
+  /* Leaflet Overrides */
+  .leaflet-container {
+    @apply font-sans;
+  }
+
+  .leaflet-popup-content-wrapper {
+    @apply bg-card text-card-foreground border border-border shadow-xl rounded-lg p-0 overflow-hidden;
+  }
+
+  .leaflet-popup-content {
+    @apply m-0 p-0 !important;
+  }
+
+  .leaflet-popup-tip {
+    @apply bg-card border-border;
+  }
+
+  .custom-popup .leaflet-popup-content-wrapper {
+    min-width: 250px;
+  }
+
+  /* Marker pulse animation */
+  .marker-pulse {
+    animation: marker-pulse 2s infinite;
+  }
+
+  @keyframes marker-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
